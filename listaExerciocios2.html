@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="KeyWords" content="inovação, escola, novvidades">
+    <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2217/PNG/512/augmented_reality_computer_developer_coding_programming_icon_134250.png" type="image/x-icon">
+    <title>Atividade 2</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #A67C7C;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .navbar ul {
+            display: flex;
+            position: fixed;
+            flex-direction: row;
+            top: 0;
+            left: 0;
+            width: 100%;
+            list-style: none;
+            list-style-position: outside;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 0;
+            background-color: #324373;
+            color: hsl(224, 59%, 79%);
+        }
+
+        body a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar div {
+            padding: 10px;
+            color: hsl(224, 59%, 79%);
+        }
+
+        .logo {
+            display: flex;
+            width: 20%;
+        }
+
+        .main {
+            flex-grow: 1;
+        }
+
+        .content {
+            display: flex;
+            max-height: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-inline: 25px;
+            margin-inline: 10%;
+            background-color: aliceblue;
+        }
+
+        .poema {
+            width: 100%;
+            text-align: center;
+        }
+
+        .poema div {
+            margin-bottom: 75px;
+        }
+
+        .lista li {
+            list-style: none;
+            list-style-position: outside;
+
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0, 0.4);
+            align-content: center;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.30);;
+            margin-inline: 15%;
+            padding: 20px;
+            border: 1px solid #888;
+            justify-content: center;
+            text-align: center;
+            border-radius: 25px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            background-color: #141726;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            justify-content: center;
+        }
+
+        .footer a {
+            color: #ffffff;
+        }
+
+        .footer img {
+            width: 50px;
+        }
+
+        .footer div {
+            display: flex;
+            justify-content: space-around;
+            width: 400px;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <div class="logo">
+                Site simples
+            </div>
+            <li><a href="#" onclick="showPage('poema')">
+                    <div>Poemas</div>
+                </a></li>
+            <li><a href="#" onclick="showPage('livro')">
+                    <div>livros</div>
+                </a></li>
+            <li><a href="#" onclick="showPage('musica')">
+                    <div>Musicas</div>
+                </a></li>
+            <li><a href="#" onclick="showPage('noticia')">
+                    <div>Noticias</div>
+                </a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <content class="content">
+
+            <div id="poema" class="page poema active">
+                <div>
+                    <h1>Ausência</h1>
+                    Por muito tempo achei que a ausência é falta.<br />
+                    E lastimava, ignorante, a falta.<br />
+                    Hoje não a lastimo.<br />
+                    Não há falta na ausência.<br />
+                    A ausência é um estar em mim.<br />
+                    E sinto-a, branca, tão pegada, aconchegada nos meus braços,<br />
+                    que rio e danço e invento exclamações alegres,<br />
+                    porque a ausência, essa ausência assimilada,<br />
+                    ninguém a rouba mais de mim.<br />
+                    Carlos Drummond de Andrade<br />
+                </div>
+                    
+                <div>
+                    <h1>Alívio Imediato / Ilex Paranaguariensis</h1>
+                    <P>Engenheiros do Hawaii</P>
+                    Hoje eu acordei mais cedo, tomei sozinho o Chimarrão<br />
+                    Procurei a noite na memória... Procurei em vão<br />
+                    Hoje eu acordei mais leve (nem li o jornal)<br />
+                    Tudo deve estar suspenso... Nada deve pesar<br />
+                    Ainda era noite, esperei o dia amanhecer<br />
+                    Como quem aquece a água sem deixar ferver<br />
+                Hoje eu acordei, agora eu sei viver no escuro<br />
+                Até que a chama se acenda<br />
+                Verde... Quente... erva... ventre... dentro… Entranhas<br />
+                Mate amargo noite adentro estrada estranha<br />
+                O melhor esconderijo<br />
+                A maior escuridão<br />
+                Já não servem de abrigo já não dão proteção<br />
+                Holofotes iluminam a libido e o vírus<br />
+                O poder, o pudor os lábios e o batom<br />
+                Que a chuva caia como uma luva<br />
+                Um dilúvio um delírio<br />
+                Que a chuva traga alívio imediato<br />
+                Que a noite caia, de repente caia,<br />
+                Tão demente quanto um raio<br />
+                Que a noite traga alívio imediato<br />
+                Ilex paraguarienses<br />
+                Relax... Agora, paciência<br />
+            </div>
+            </div>
+
+            <div id="noticia" class="page ">
+                <h1>
+                    10 escolas que estão transformando suas realidades
+                </h1>
+                <p><b>Fonte:</b> Porvir, Disponível em: <a href="http://porvir.org/">http://porvir.org/</a>. Acesso em:
+                    Out.
+                    2024</p>
+                <h2>
+                    Ashoka e Instituto Alana reconhecem iniciativas de educação que desenvolvem crianças e jovens para
+                    serem agentes de transformação
+                </h2>
+                <p>por Marina Lopes ilustração relógio 18 de setembro de 2015</p>
+                <p>Qual é o papel da escola dentro de uma sociedade transformadora? Buscando apoiar e conectar
+                    experiências de todo o país que contribuem na formação de crianças e jovens com potencial de
+                    transformação social, a Ashoka e o Instituto Alana reconheceram dez <a
+                        href="http://escolastransformadoras.com.br/">Escolas Transformadoras</a> para
+                    integrarem uma comunidade global de aprendizagem. Lançada na última quarta-feira (16/9), em São
+                    Paulo, a iniciativa pretende mapear e dar visibilidade para essas instituições, incentivando trocas
+                    entre elas.</p>
+                <P>“Escolas Transformadoras traz luz para experiências que acontecem ao redor do mundo e já estão
+                    caminhando nesse processo de olhar para o potencial da criança como algo mais amplo do que os
+                    currículos, as avaliações ou o que o discurso pedagógico convencional prevê para escola”, definiu
+                    Ana Cláudia Leite, coordenadora de Educação e Cultura da infância do Instituto Alana.</p>
+
+                <p><a href="http://porvir.org/sem-rotulo-escola-em-sao-paulo-e-sucesso-de-inclusao/">Saiba mais sobre o
+                        Colégio Viver, uma das escolas transformadoras</a></p>
+
+                <p>Além do reconhecimento, as instituições que receberam o título de Escolas Transformadoras terão
+                    acesso à comunidade Ashoka, com mais de 3.000 empreendedores sociais espalhados pelo mundo, e à
+                    comunidade Alana. Elas também estarão conectadas com uma rede composta por representantes de
+                    diferentes segmentos, como academia, organizações sociais, institutos e veículos de comunicação</p>
+
+                <p>Entre as primeiras escolas mapeadas no país, estão instituições públicas, privadas e comunitárias, em
+                    áreas urbanas ou rurais de seis estados brasileiros. Nas próximas etapas, também serão reconhecidas
+                    outras instituições. No site do programa existem opções para que as pessoas indiquem uma escola
+                    transformadora ou façam a inscrição da sua própria instituição.</p>
+
+                <p> <a href="http://escolastransformadoras.com.br/en/faca-parte/">Insecreva ou indique uma Escola
+                        Transformadora</a>
+
+                <p>Para ser considerada uma escola transformadora, a instituição deve atender quatro critérios do
+                    programa: ter alinhamento com a visão de que todos podem ser transformadores; olhar para os
+                    educandos como sujeitos ativos de suas aprendizagens; demonstrar capacidade de inovação; e, por fim,
+                    ter condições para influenciar o ecossistema da educação no Brasil.</p>
+
+                <p>Além disso, a instituição deve ter uma equipe comprometida com uma educação transformadora e com
+                    entusiasmo para compartilhar e aprender, incentivando o desenvolvimento de habilidades e
+                    competências transformadoras, como o trabalho em equipe, criatividade, empatia e protagonismo
+                    social.</p>
+
+                <p><b>Debate com educadores</b>
+
+                <p>O evento de lançamento do programa Escolas Transformadoras contou com uma palestra da designer
+                    indiana Kiran Bir Sethi, idealizadora do movimento global <a
+                        href="http://porvir.org/movimento-estimula-jovens-transformar-seu-entorno/">Desing for
+                        Change</a>. Durante o encontro,
+                    lideranças das equipes de todas as escolas reconhecidas também participaram de um debate, com
+                    mediação da jornalista Adriana Couto, da TV Cultura.</p>
+
+                <p>Foram discutidos temas como o currículo e o incentivo ao protagonismo dentro do ambiente escolar.
+                    Para Ausonia Donato, diretora pedagógica Colégio Equipe, em São Paulo, um aluno transformador é
+                    aquele que consegue ter um olhar sensível para questões sociais, políticas e humanas.</p>
+
+                <p>“O aluno que a gente quer não é o aluno que está pronto. É o aluno que vai se fazendo o tempo todo”,
+                    afirmou a diretora Ana Elisa Siqueira, da EMEF Desembargador Amorim Lima. De acordo com ela, a
+                    escola também deve derrubar os muros para que a comunidade se aproxime da formação dos alunos. “A
+                    entrada da comunidade na escola traz conflitos e também traz soluções.”</p>
+
+                <p>Na Escola Comunitária Luiza Mahin, em Salvador, a participação da comunidade é um elemento essencial
+                    para o trabalho da instituição. “A gente passou a perceber que a comunidade escolar não é só mãe e
+                    pai. É qualquer parceiro que está na comunidade”, contou Sonia Dias, ao mencionar que os alunos
+                    aprendem no contato com diferentes atores, inclusive ouvindo as histórias de quem vende geladinho
+                    nos arredores da escola.</p>
+
+                <p><b>Discussões e desafios</b></p>
+
+                <p>O encontrou também levantou questões consideradas polêmicas, como a ansiedade dos pais pelo resultado
+                    dos filhos em avaliações e vestibulares. “Nossa missão é ensinar todas as crianças para que elas
+                    possam se sentir capazes de aprender. Isso é mais importante do que passar em um vestibular”,
+                    mencionou Carla de Cunto, diretora da Escola Municipal Professora Acliméa de Oliveira Nascimento, em
+                    Teresópolis. “A gente acredita que quando se forma um ser humano integral que saiba raciocinar, o
+                    vestibular é só mais uma etapa da vida que a gente vai passar”, completa Thiego Mattos, da Escola
+                    Rural Dendê da Serra, em Serra Grande.</p>
+
+                <p>Sobre os desafios de pensar em novos modelos de educação, Fátima Limaverde, diretora da Escola Vila,
+                    em Fortaleza, chamou atenção: “a grande preocupação de hoje é como as escolas podem manter os alunos
+                    e os professores felizes. Há um descompasso muito grande porque o professor continua querendo ser
+                    professor da sua aula, e o aluno não aguenta mais isso.” Segundo ela, as crianças precisam ser
+                    protagonistas do seu processo de aprendizagem e devem encontrar sentido nos conteúdos que estão
+                    aprendendo.</p>
+
+                <p>Confira a lista das Escolas Transformadoras no Brasil:</p>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/colegio-equipe/">Colégio Equipe (São Paulo,
+                            SP)</a></b><br>
+                    Tipo: Cooperativa<br>
+                    Etapa: Educação Infantil, Ensino Fundamental e Ensino Médio<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/colegio-viver/">Viver (Cotia, SP)</a></b><br>
+                    Tipo: Rural/Privada<br>
+                    Etapa: Educação Infantil e Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-amigos-do-verde/">Escola Amigos do
+                            Verde (Porto Alegre, RS)</a></b><br>
+                    Tipo: Privada<br>
+                    Etapa: Educação Infantil e Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-comunitaria-luiza-mahin/">Escola
+                            Comunitária Luiza Mahim (Salvador, BA)</a></b><br>
+                    Tipo: Comunitária<br>
+                    Etapa: Educação Infantil e Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/emef-aclimea-nascimento/">Escola Municipal
+                            Acliméa do Nascimento (Teresópolis, RJ)</a></b><br>
+                    Tipo: Pública<br>
+                    Etapa: Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-municipal-anne-frank/">Escola
+                            Municipal Anne Frank (Belo Horizonte, MG)</a></b><br>
+                    Tipo: Pública<br>
+                    Etapa: Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/emef-desembargador-amorim-lima/">Escola
+                            Municipal Desembargador Amorim Lima (São Paulo, SP)</a></b><br>
+                    Tipo: Pública<br>
+                    Etapa: Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-municipal-professor-paulo-freire/">Escola
+                            Municipal Prof. Paulo Freire (Belo Horizonte, MG)</a></b><br>
+                    Tipo: Pública<br>
+                    Etapa: Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-rural-dende-da-serra/">Escola Rural
+                            Dendê da Serra (Serra Grande, BA)</a></b><br>
+                    Tipo: Rural, mantida por associação<br>
+                    Etapa: Educação Infantil e Ensino Fundamental<br>
+
+                <p><b><a href="http://escolastransformadoras.com.br/escola/escola-vila/">Escola Vila (Fortaleza,
+                            CE)</a></b><br>
+                    Tipo: Privada<br>
+                    Etapa: Educação Infantil, Ensino Fundamental<br>
+            </div>
+            
+            <div id="livro" class="page lista">
+                <ul>
+                    <h1>Livros para o Enem</h1>
+                    <li><a href="#" onclick="showModal('modal1')">Capitães de Areia</a></li>
+                    <li><a href="#" onclick="showModal('modal2')">Manifesto da Poesia Pau-Brasil</a></li>
+                    <li><a href="#" onclick="showModal('modal3')">Triste Fim de Policarpo Quaresma</a></li>
+                </ul>
+            </div>
+
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal1')">&times;</span>
+                    <p><a
+                            href="https://www.google.com.br/books/edition/Capit%C3%A3es_da_Areia/FDJ1_r4MCIEC?hl=pt-BR&gbpv=1&printsec=frontcover"><img
+                                src="https://m.media-amazon.com/images/I/41+qBbl0BjL._SY445_SX342_.jpg"></a></p>
+                </div>
+            </div>
+
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal2')">&times;</span>
+                    <p><a
+                            href="https://grad.letras.ufmg.br/arquivos/monitoria/Oswald%20de%20Andrade.%20Manifestos%20(Poesia%20Pau%20Brasil%20e%20Antrop%C3%B3fago).pdf"><img
+                                src="https://m.media-amazon.com/images/I/513QwBGfn-L._SY445_SX342_.jpg"> </a></p>
+                </div>
+            </div>
+
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal3')">&times;</span>
+                    <p><a href="http://www.culturatura.com.br/obras/Triste%20Fim%20de%20Policarpo%20Quaresma.pdf"><img
+                                src="https://m.media-amazon.com/images/I/41mlJq5KZlL._SY445_SX342_.jpg"></a></p>
+                </div>
+            </div>
+
+            <div id="musica" class="page">
+                <ol>
+                    <h1>Músicas para ouvir estudando</h1>
+                    <li>
+                        <b>Beethoven: <u>5<sup>th</sup> Symphony</u></b> – Música de suspense e terror clássica.
+                        Aparecia no
+                        Mais Você quando a <i>Ana
+                            Maria Braga</i> provava uma comida. Apareceu também no filme: “<small>Se eu fosse
+                            você</small>“.
+                        Entre outras
+                        participações.
+                    </li>
+                    <li>
+                        <b>Tchaikovsky: <u>1812 Overture</u></b> – Música de fanfarra, sinceramente, acho
+                        que não é tão conhecida assim, mas em todo caso está aqui marcando
+                        presença.
+
+                    </li>
+                    <li>
+                        <b>Mozart: <u>Eine Kleine Nachtmusik</u></b> – Pequena serenata, obrigatória para
+                        os fãs de clássicos. Presente também no rock na música Clássico de
+                        Tenacious D. Muita gente conhece.
+
+                    </li>
+                    <li>
+                        <b>Bach: <u>Toccata And Fugue</u></b> – Música de Impacto, presente em diversos
+                        filmes e até mesmo em desenho animado.
+                    </li>
+                    <li>
+                        <b>Rossini: <u>William Tell Overture</u></b> – Música de entrada de reis ou de
+                        cavalos. Presente em quase todos os cartoons como <b><big>Piu-piu e
+                                Frajola, Tom e Jerry ou Pica-Pau</big></b>. Filmes medievais antigos
+                        também possuem essa música. Importante ainda citar que o <i>Mickey</i> já
+                        regeu essa música em The Band Concert, o que particularmente tornou
+                        impossível para mim pensar nela sem lembrar de um tornado.
+                    </li>
+                </ol>
+            </div>
+        </content>
+    </main>
+    <footer class="footer">
+        <div>
+            <a href="https://www.linkedin.com/in/euflausino-eduardo/">
+                <img src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Linkedin-icon.png">
+            </a>
+            <a href="https://github.com/EduardoHantrir"> 
+                <img src="https://www.shareicon.net/data/128x128/2016/11/14/852448_github_512x512.png">
+            </a>
+            Eduardo Souza Euflausino
+        </div>
+    </footer>
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function (page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(function (modal) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>
